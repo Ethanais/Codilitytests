@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] A) {
+        //sort the array
+        Arrays.sort(A);
+        int oddOne = 0;
+        // if N = 1
+        if (A.length == 1){
+            oddOne = A[0];
+        } else {
+        //compare the elements 1 to 1
+
+            for (int i = 0; i < A.length - 1; i++)
+            {
+                if (A[i] == A[i+1]){
+                    i++;
+                    continue;
+                } else {
+                    oddOne = A[i];
+                    break;
+                }
+            }
+
+            if (oddOne == 0){
+                oddOne = A[A.length - 1];
+            }
+        }
+        return oddOne;
+    }
+}
