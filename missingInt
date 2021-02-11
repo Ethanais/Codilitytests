@@ -1,0 +1,24 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] A) {
+        int x = 1;
+        //sort the array
+        Arrays.sort(A);
+
+        //loop through the array
+        for (int i = 0; i < A.length; i++){
+            //if negative continue to loop
+            if(A[i] < 0){
+                continue;
+            //if positive, find the missing one 
+            } else if(A[i] >= 0){
+                if (x < A[i]){
+                    return x;
+                }
+                x = A[i] + 1;
+            }
+        }
+        return x;
+    }
+}
