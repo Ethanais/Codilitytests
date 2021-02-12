@@ -1,0 +1,24 @@
+//Every slice must be of size two or three. 
+//Slices of bigger sizes are created from such smaller slices. 
+//Therefore should any bigger slice have an optimal value, all sub-slices must be the same, for this case to hold true. 
+//Should this not be true, one of the sub-slices must be the optimal slice. The others being bigger. 
+//Therefore we check all possible slices of size 2/3 and return the smallest one. 
+//The first such slice is the correct one, do not use <=!
+
+class Solution {
+    public int solution(int[] A) {
+        int minIndex = 0;
+        double minValue = 10001;
+
+    for (int i = 0; i < A.length - 1; i++){
+        if ((A[i] + A[i+1])/2.0 < minValue){
+            minIndex = i;
+            minValue = (A[i] + A[i+1])/2.0;
+        } else if (i < A.length -2 && (A[i] + A[i+1] + A[i+2])/3.0 < minValue){
+            minIndex = i;
+            minValue = (A[i] + A[i+1] + A[i+2])/3.0;
+        }
+    }
+    return minIndex;
+    }
+}
