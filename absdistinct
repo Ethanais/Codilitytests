@@ -1,0 +1,34 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] A) {
+        //if empty array return 0
+        if(A.length == 0){
+            return 0;
+        }
+
+        //if 1 element return 1
+        if(A.length == 1){
+            return 1;
+        }
+
+        // remove negative values
+        for (int i = 0; i < A.length; i++){
+           A[i] = Math.abs(A[i]);
+        }
+
+        //re- sort the array
+        Arrays.sort(A);
+        
+        //initialize counter to 0
+        int ctr = 1;
+
+        //loop through the array and add 1 to counter when neighboors are different
+        for (int i = 0; i < A.length - 1; i++){
+            if(A[i] != A[i + 1]){
+                ctr++;
+            }
+        }
+    return ctr;
+    }
+}
