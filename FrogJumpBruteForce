@@ -1,0 +1,14 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int X, int Y, int D) {
+        // create counter
+        int nbrJumps = 0;
+        while (X < Y){
+            X = X + D;
+            nbrJumps++;
+        }
+
+    return nbrJumps;
+    }
+}
