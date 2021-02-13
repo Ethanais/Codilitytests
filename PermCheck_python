@@ -1,0 +1,14 @@
+def solution(A):
+    B = []
+
+    for i in range(len(A)):
+        B.append(i + 1)
+    
+    A.sort()
+    
+    if A == B:
+        return 1
+    else: 
+        return 0
+        
+    pass
