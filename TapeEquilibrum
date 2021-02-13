@@ -1,0 +1,28 @@
+// import java.util.*;
+
+class Solution {
+    public int solution(int[] A) {
+
+        int temp = 0;
+        int minDif = 100001;
+
+        //initialize rightsum
+        int rightSum = 0;
+        for (int i = 1; i < A.length; i++){
+            rightSum += A[i];
+        }
+
+        //initialize leftSum
+        int leftSum = A[0];
+
+        for (int i = 1; i < A.length; i++){
+            temp = Math.abs(leftSum  - rightSum); 
+            if (temp < minDif){
+                minDif = temp;
+            }
+            leftSum += A[i];
+            rightSum -= A[i];
+        }
+        return minDif;
+    }
+}
