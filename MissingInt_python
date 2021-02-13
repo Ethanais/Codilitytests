@@ -1,0 +1,15 @@
+def solution(A):
+    x = 1
+    A.sort()
+
+    for i in range(len(A)):
+        if A[i] < 0:
+            continue
+        elif A[i] >= 0:
+            if  x < A[i]:
+                return x
+            x = A[i] + 1
+    
+    return x
+
+    pass
