@@ -1,0 +1,14 @@
+def solution(A):
+    ctr = 1
+    A.sort()
+
+    if len(A) == 0:
+        return 0
+    
+    for i in range(1, len(A)):
+        if A[i] != A[i-1]:
+            ctr += 1
+    
+    return ctr
+
+    pass
