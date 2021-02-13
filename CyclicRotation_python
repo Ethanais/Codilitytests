@@ -1,0 +1,10 @@
+def solution(A, K):
+    size = len(A)
+    rotated_array = []
+
+    for i in range(len(A)):
+        rotated_array.insert((i+K) % size, A[i])
+
+    return rotated_array
+    
+    pass
