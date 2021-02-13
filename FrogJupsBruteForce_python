@@ -1,0 +1,10 @@
+def solution(X, Y, D):
+    nbr_jumps = 0
+
+    while X < Y:
+        X = X + D  
+        nbr_jumps += 1
+
+    return nbr_jumps
+    
+    pass
