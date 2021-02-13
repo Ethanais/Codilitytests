@@ -1,0 +1,14 @@
+def solution(X, Y, D):
+    
+    if (Y - X) % D == 0:
+        nbr_jumps = (Y - X)/D
+    else:
+        nbr_jumps = (Y - X)/D
+        #round by adding 0.5 to avoid rounding down even nbr
+        nbr_jumps = round(nbr_jumps + 0.5)
+
+    nbr_jumps = int(nbr_jumps)
+    
+    return nbr_jumps
+
+    pass
